@@ -1,341 +1,557 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosso Casamento</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rafael & Jessica | Nosso Casamento</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
-        /* --- Configurações Gerais --- */
-        :root {
-            --cor-primaria: #bfa479; /* Dourado suave */
-            --cor-fundo: #f9f9f9;
-            --cor-texto: #555;
-            --cor-titulo: #333;
-        }
+      /* --- Configurações Gerais --- */
+      :root {
+        --cor-primaria: #bfa479; /* Dourado suave */
+        --cor-fundo: #f9f9f9;
+        --cor-texto: #555;
+        --cor-titulo: #333;
+      }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--cor-texto);
-            background-color: var(--cor-fundo);
-            line-height: 1.6;
-        }
+      body {
+        font-family: "Montserrat", sans-serif;
+        color: var(--cor-texto);
+        background-color: var(--cor-fundo);
+        line-height: 1.6;
+      }
 
-        h1, h2, h3 {
-            font-family: 'Great Vibes', cursive;
-            color: var(--cor-titulo);
-            font-weight: 400;
-        }
+      h1,
+      h2,
+      h3 {
+        font-family: "Great Vibes", cursive;
+        color: var(--cor-titulo);
+        font-weight: 400;
+      }
 
-        /* --- Header / Hero Section --- */
-        header {
-            height: 100vh;
-            background-size: cover;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://drive.google.com/thumbnail?id=1YcwbXc0qTmWyCG-JY0Z-XXBQ7qEcuTG5&sz=w1920');
-            background-position: center;
-            background-attachment: fixed; /* Efeito Parallax */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 20px;
-        }
+      /* --- Header / Hero Section --- */
+      header {
+        height: 100vh;
+        background-size: cover;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+          url("https://drive.google.com/thumbnail?id=1YcwbXc0qTmWyCG-JY0Z-XXBQ7qEcuTG5&sz=w1920");
+        background-position: center;
+        background-attachment: fixed; /* Efeito Parallax */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        padding: 20px;
+      }
 
+      header h1 {
+        font-size: 5rem;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        color: #fff;
+      }
+
+      header p {
+        font-size: 1.5rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-top: 10px;
+        border-top: 2px solid white;
+        border-bottom: 2px solid white;
+        padding: 10px 0;
+      }
+
+      /* --- Seções Gerais --- */
+      section {
+        padding: 80px 20px;
+        max-width: 1100px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      section h2 {
+        font-size: 3.5rem;
+        margin-bottom: 40px;
+        color: var(--cor-primaria);
+      }
+
+      /* --- Sobre Nós --- */
+      .sobre-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .foto-casal {
+        flex: 1;
+        min-width: 300px;
+        max-width: 400px;
+      }
+
+      .foto-casal img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .foto-casal img:hover {
+        transform: scale(1.02);
+      }
+
+      .texto-sobre {
+        flex: 1;
+        min-width: 300px;
+        text-align: left;
+      }
+
+      .texto-sobre p {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+      }
+
+      /* --- O Grande Dia (Data e Local) --- */
+      .detalhes-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 30px;
+      }
+
+      .card-detalhe {
+        background: white;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        flex: 1;
+        min-width: 280px;
+        border-bottom: 3px solid var(--cor-primaria);
+      }
+
+      .card-detalhe h3 {
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+        color: var(--cor-primaria);
+      }
+
+      .mapa {
+        margin-top: 40px;
+        width: 100%;
+        height: 300px;
+        background-color: #eee;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #888;
+        overflow: hidden;
+        position: relative;
+      }
+
+      /* --- Seção de Traje / Cores (NOVO) --- */
+      .traje-container {
+        background-color: white;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .aviso-cores {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #fcfcfc;
+        border: 1px dashed var(--cor-primaria);
+        border-radius: 10px;
+      }
+
+      .cores-proibidas {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+      }
+
+      .item-cor {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .bolinha-cor {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: relative;
+      }
+
+      /* Ícone de restrição sobre a cor */
+      .bolinha-cor::after {
+        content: "✖";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      .bolinha-cor.branco::after {
+        color: #555;
+        text-shadow: none;
+      }
+
+      .azul-royal {
+        background-color: #2b4f90; /* Tom de Azul Royal */
+      }
+
+      .branco {
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+      }
+
+      .legenda-cor {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #555;
+        text-transform: uppercase;
+      }
+
+      .texto-destaque {
+        font-weight: 600;
+        color: var(--cor-primaria);
+      }
+
+      /* --- Lista de Presentes --- */
+      #presentes {
+        background-color: white;
+      }
+
+      .lista-presentes {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        max-width: 600px; /* Limitando largura para ficar centralizado e bonito */
+        margin: 0 auto;
+      }
+
+      .item-presente {
+        border: 1px solid #eee;
+        padding: 30px;
+        border-radius: 8px;
+        transition: 0.3s;
+      }
+
+      .item-presente:hover {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        border-color: var(--cor-primaria);
+      }
+
+      .btn-presente {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: var(--cor-primaria);
+        color: white;
+        text-decoration: none;
+        border-radius: 25px;
+        font-size: 0.9rem;
+        transition: background 0.3s;
+      }
+
+      .btn-presente:hover {
+        background-color: #a38960;
+      }
+
+      /* --- RSVP --- */
+      #rsvp {
+        background-color: #f4f4f4;
+        text-align: center;
+        padding: 80px 20px;
+      }
+
+      #rsvp h2 {
+        font-family: "Great Vibes", cursive;
+        color: #333 !important;
+        text-decoration: none !important;
+        border: none;
+        margin-bottom: 20px;
+      }
+
+      .btn-rsvp {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 15px 30px;
+        background-color: #bfa479;
+        color: white !important;
+        text-decoration: none !important;
+        border-radius: 25px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition:
+          background 0.3s,
+          transform 0.2s;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-rsvp:hover {
+        background-color: #a38960;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      /* --- Footer --- */
+      footer {
+        background-color: #333;
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      footer p {
+        font-size: 0.9rem;
+        opacity: 0.7;
+      }
+
+      /* --- Responsividade Mobile --- */
+      @media (max-width: 768px) {
         header h1 {
-            font-size: 5rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            color: #fff;
+          font-size: 3.5rem;
         }
-
-        header p {
-            font-size: 1.5rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-top: 10px;
-            border-top: 2px solid white;
-            border-bottom: 2px solid white;
-            padding: 10px 0;
-        }
-
-        /* --- Seções Gerais --- */
-        section {
-            padding: 80px 20px;
-            max-width: 1100px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
         section h2 {
-            font-size: 3.5rem;
-            margin-bottom: 40px;
-            color: var(--cor-primaria);
+          font-size: 2.5rem;
         }
-
-        /* --- Sobre Nós --- */
-        .sobre-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .foto-casal {
-            flex: 1;
-            min-width: 300px;
-            max-width: 400px;
-        }
-
-        .foto-casal img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .foto-casal img:hover {
-            transform: scale(1.02);
-        }
-
         .texto-sobre {
-            flex: 1;
-            min-width: 300px;
-            text-align: left;
+          text-align: center;
         }
-
-        .texto-sobre p {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
+        .sobre-container {
+          flex-direction: column;
         }
-
-        /* --- O Grande Dia (Data e Local) --- */
-        .detalhes-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .card-detalhe {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            flex: 1;
-            min-width: 280px;
-            border-bottom: 3px solid var(--cor-primaria);
-        }
-
-        .card-detalhe h3 {
-            font-family: 'Montserrat', sans-serif;
-            text-transform: uppercase;
-            font-size: 1.2rem;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            color: var(--cor-primaria);
-        }
-
-        .mapa {
-            margin-top: 40px;
-            width: 100%;
-            height: 300px;
-            background-color: #eee;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #888;
-        }
-
-        /* --- Lista de Presentes --- */
-        #presentes {
-            background-color: white;
-        }
-
-        .lista-presentes {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .item-presente {
-            border: 1px solid #eee;
-            padding: 30px;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
-
-        .item-presente:hover {
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            border-color: var(--cor-primaria);
-        }
-
-        .btn-presente {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background-color: var(--cor-primaria);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            transition: background 0.3s;
-        }
-
-        .btn-presente:hover {
-            background-color: #a38960;
-        }
-
-        /* --- Footer --- */
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        footer p {
-            font-size: 0.9rem;
-            opacity: 0.7;
-        }
-
-        /* --- Responsividade Mobile --- */
-        @media (max-width: 768px) {
-            header h1 { font-size: 3.5rem; }
-            section h2 { font-size: 2.5rem; }
-            .texto-sobre { text-align: center; }
-            .sobre-container { flex-direction: column; }
-
-            #rsvp {
-    background-color: #f4f4f4;
-    text-align: center;
-}
-
-#rsvp h2 {
-    text-decoration: none;
-    border-bottom: none;
-    display: inline-block;
-    margin-bottom: 25px;
-}
-
-#rsvp p {
-    color: #555;
-    font-size: 1.1rem;
-    text-decoration: none;
-}
-
-.btn-rsvp {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 15px 30px;
-    background-color: #bfa479;
-    color: white !important;
-    text-decoration: none !important;
-    border-radius: 25px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: background 0.3s, transform 0.2s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.btn-rsvp:hover {
-    background-color: #a38960;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
-}
-
-        }
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <header>
-        <h1>Rafael & Jessica</h1>
-        <p>7 . Junho . 2026</p> </header>
+      <h1>Rafael & Jessica</h1>
+      <p>7 . Junho . 2026</p>
+    </header>
 
     <section id="sobre">
-        <h2>Nossa História</h2>
-        <div class="sobre-container">
-            <div class="foto-casal">
-                <img src="https://drive.google.com/thumbnail?id=12YIrptV51braR-RVaAmgTlHZF2wT0F_M&sz=w1000">
-            </div>
-            
-            <div class="texto-sobre">
-                <p>Tudo começou de forma despretensiosa, com um simples comentário em um story do Instagram. A conexão foi tão instantânea que, em apenas seis meses, decidimos dividir o mesmo teto e construir nossa vida juntos. </p>
-                <p>Nossa família logo cresceu com a chegada da pequena Mell, nossa Yorkshire que trouxe ainda mais alegria e amor para os nossos dias. Hoje, celebramos não apenas o amor, mas a parceria inabalável, o respeito mútuo e a felicidade de apoiar e vibrar com cada conquista um do outro.</p>
-                    <img src="https://drive.google.com/thumbnail?id=1cyddg2UjxpiRMic2SpVRv5_xBV_9p5e6&sz=w1000" alt="Nossa Foto" style="width: 100%; border-radius: 10px; margin-top: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                        </div>
-
-            <div class="foto-casal">
-                <img src="https://drive.google.com/thumbnail?id=1w7SjIfmyJf5A4SpvJY8ZW8uk0Ckwdz1x&sz=w1000" alt="Foto da Noiva">
-            </div>
+      <h2>Nossa História</h2>
+      <div class="sobre-container">
+        <div class="foto-casal">
+          <img
+            src="https://drive.google.com/thumbnail?id=12YIrptV51braR-RVaAmgTlHZF2wT0F_M&sz=w1000"
+            alt="Casal"
+          />
         </div>
+
+        <div class="texto-sobre">
+          <p>
+            Tudo começou de forma despretensiosa, com um simples comentário em
+            um story do Instagram. A conexão foi tão instantânea que, em apenas
+            seis meses, decidimos dividir o mesmo teto e construir nossa vida
+            juntos.
+          </p>
+          <p>
+            Nossa família logo cresceu com a chegada da pequena Mell, nossa
+            Yorkshire que trouxe ainda mais alegria e amor para os nossos dias.
+            Hoje, celebramos não apenas o amor, mas a parceria inabalável, o
+            respeito mútuo e a felicidade de apoiar e vibrar com cada conquista
+            um do outro.
+          </p>
+          <img
+            src="https://drive.google.com/thumbnail?id=1cyddg2UjxpiRMic2SpVRv5_xBV_9p5e6&sz=w1000"
+            alt="Nossa Foto"
+            style="
+              width: 100%;
+              border-radius: 10px;
+              margin-top: 20px;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            "
+          />
+        </div>
+
+        <div class="foto-casal">
+          <img
+            src="https://drive.google.com/thumbnail?id=1w7SjIfmyJf5A4SpvJY8ZW8uk0Ckwdz1x&sz=w1000"
+            alt="Foto da Noiva"
+          />
+        </div>
+      </div>
     </section>
 
     <section id="detalhes">
-        <h2>O Grande Dia</h2>
-        <div class="detalhes-container">
-            <div class="card-detalhe">
-                <h3>Cerimônia</h3>
-                <p>16:00 horas</p>
-                <p>Espaço Garden Eventos</p>
-                <p>Estr. Caetano Monteiro, 4036 - Pendotiba, Niterói</p>
-            </div>
-            <div class="card-detalhe">
-                <h3>Festa</h3>
-                <p>17:00 horas</p>
-                <p>Espaço Garden Eventos</p>
-                <p>Estr. Caetano Monteiro, 4036 - Pendotiba, Niterói</p>
-            </div>
+      <h2>O Grande Dia</h2>
+      <div class="detalhes-container">
+        <div class="card-detalhe">
+          <h3>Cerimônia</h3>
+          <p>16:00 horas</p>
+          <p>Espaço Garden Eventos</p>
+          <p>Estr. Caetano Monteiro, 4036 - Pendotiba, Niterói</p>
         </div>
-        
-        <div class="mapa" style="padding: 0; overflow: hidden; position: relative;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.6447434661454!2d-43.03618212504611!3d-22.889578237255563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x998571893ca56f%3A0x7c2b7e9f2b41d375!2sSal%C3%A3o%20para%20eventos%20Espa%C3%A7o%20Garden%20Eventos!5e0!3m2!1spt-BR!2sbr!4v1768768634735!5m2!1spt-BR!2sbr" width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="card-detalhe">
+          <h3>Festa</h3>
+          <p>17:00 horas</p>
+          <p>Espaço Garden Eventos</p>
+          <p>Estr. Caetano Monteiro, 4036 - Pendotiba, Niterói</p>
         </div>
+      </div>
+
+      <div class="mapa">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.6447434661454!2d-43.03618212504611!3d-22.889578237255563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x998571893ca56f%3A0x7c2b7e9f2b41d375!2sSal%C3%A3o%20para%20eventos%20Espa%C3%A7o%20Garden%20Eventos!5e0!3m2!1spt-BR!2sbr!4v1768768634735!5m2!1spt-BR!2sbr"
+          width="100%"
+          height="100%"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+
+    <section id="traje">
+      <h2>Traje & Orientações</h2>
+
+      <div class="traje-container">
+        <p
+          style="
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: var(--cor-titulo);
+          "
+        >
+          Esporte Fino
+        </p>
+        <p>
+          Queremos que vocês se sintam confortáveis e elegantes para celebrar
+          este momento conosco.
+        </p>
+
+        <div class="aviso-cores">
+          <h3
+            style="
+              font-family: &quot;Montserrat&quot;, sans-serif;
+              font-size: 1.1rem;
+              color: var(--cor-titulo);
+              margin-bottom: 15px;
+              font-weight: bold;
+            "
+          >
+            Atenção Especial para as Meninas
+          </h3>
+
+          <p>
+            Para as convidadas, pedimos gentilmente evitar as cores abaixo.<br />
+            Elas são reservadas exclusivamente para a
+            <span class="texto-destaque">Noiva</span>,
+            <span class="texto-destaque">Mães</span> e
+            <span class="texto-destaque">Madrinhas</span>.
+          </p>
+
+          <div class="cores-proibidas">
+            <div class="item-cor">
+              <div class="bolinha-cor azul-royal"></div>
+              <span class="legenda-cor">Azul Royal</span>
+            </div>
+
+            <div class="item-cor">
+              <div class="bolinha-cor branco"></div>
+              <span class="legenda-cor">Branco</span>
+            </div>
+          </div>
+
+          <p style="margin-top: 20px; font-size: 0.9rem; font-style: italic">
+            Agradecemos a compreensão e o carinho!
+          </p>
+        </div>
+      </div>
+    </section>
 
     <section id="presentes">
-        <h2>Lista de Presentes</h2>
-        <p style="margin-bottom: 30px;">Sua presença é nosso maior presente! Se quiser nos presentear, aqui está o nosso pedido:</p>
-        
-        <div class="lista-presentes">
-            <div class="item-presente">
-                <h3>Cota Lua de Mel</h3>
-                <p>Ajude-nos a ter uma viagem inesquecível.</p>
-                <p>Chave Pix: rafael_mpl@hotmail.com</p>
-                
-            </div>
+      <h2>Lista de Presentes</h2>
+      <p style="margin-bottom: 30px">
+        Sua presença é nosso maior presente! Se quiser nos presentear, aqui está
+        o nosso pedido:
+      </p>
+
+      <div class="lista-presentes">
+        <div class="item-presente">
+          <h3>Cota Lua de Mel</h3>
+          <p>Ajude-nos a ter uma viagem inesquecível.</p>
+          <br />
+          <p><strong>Chave Pix:</strong></p>
+          <p style="color: var(--cor-primaria); font-weight: 600">
+            rafael_mpl@hotmail.com
+          </p>
+        </div>
+      </div>
     </section>
-                
-    <section id="rsvp" style="background-color: #f4f4f4; text-align: center; padding: 60px 20px;">
-        
-        <h2 style="color: #333 !important; text-decoration: none !important; border: none; margin-bottom: 20px;">
-            Confirme sua Presença
-        </h2>
 
-        <p style="color: #555 !important; text-decoration: none !important; font-size: 1.1rem;">
-            Sua presença é muito importante para nós!
-        </p>
-        
-        <p style="color: #555 !important; text-decoration: none !important; margin-bottom: 30px;">
-            Por favor, clique no botão abaixo para preencher o formulário.
-        </p>
+    <section id="rsvp">
+      <h2>Confirme sua Presença</h2>
 
-        <a href="https://forms.gle/sxX2KK8SeMhTgnhRA" target="_blank" 
-        style="display: inline-block; padding: 15px 30px; background-color: #bfa479; color: white !important; text-decoration: none !important; border-radius: 25px; font-weight: bold;">
-            RESPONDER CONFIRMAÇÃO
-        </a>
+      <p
+        style="
+          color: #555 !important;
+          text-decoration: none !important;
+          font-size: 1.1rem;
+          margin-bottom: 15px;
+        "
+      >
+        Sua presença é muito importante para nós!
+      </p>
 
+      <p
+        style="
+          color: #555 !important;
+          text-decoration: none !important;
+          margin-bottom: 30px;
+        "
+      >
+        Por favor, clique no botão abaixo para preencher o formulário.
+      </p>
+
+      <a
+        href="https://forms.gle/sxX2KK8SeMhTgnhRA"
+        target="_blank"
+        class="btn-rsvp"
+      >
+        RESPONDER CONFIRMAÇÃO
+      </a>
     </section>
+
+    <footer>
+      <p>Feito com amor por Rafael & Jessica &copy; 2026</p>
+    </footer>
+  </body>
+</html>
